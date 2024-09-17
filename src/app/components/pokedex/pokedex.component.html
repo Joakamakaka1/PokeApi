@@ -1,0 +1,28 @@
+<app-header/>
+<main id="container">
+  <app-detalle-pokemon 
+    [pokemon]="pokemonSeleccionado"
+    (clicked)="cambiarEstadoDetalle()"
+    [abierto]="detalle" 
+    [ngClass]="{'abierto': detalle}">
+  </app-detalle-pokemon>
+
+  <app-foto-pokemon 
+    [pokemon]="pokemonSeleccionado"
+    [ngClass]="{'levantado': detalle}">
+  </app-foto-pokemon>
+
+  <div id="tarjetasContainer" 
+    #tarjetas 
+    (scroll)="onScroll($event)">
+    <ng-container *ngFor="let pokemon of listaPokemons">
+      <app-tarjeta-pokemon 
+        [pokemon]="pokemon"
+        [isActive]="pokemon.url.substring(34, pokemon.url.length - 1) === activeCardId"
+        (tarjetaClickeada)="tarjetaClickeada($event)" 
+        (tarjetaClickeada)="cambioColor($event)">
+      </app-tarjeta-pokemon>
+    </ng-container>
+  </div>
+</main>
+<app-footer/>

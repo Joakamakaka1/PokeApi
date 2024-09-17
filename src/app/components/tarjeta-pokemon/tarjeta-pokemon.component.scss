@@ -1,0 +1,48 @@
+@use "../../../assets/styles/var.scss";
+
+#container {
+  display: flex;
+  align-items: center;
+}
+
+#flecha {
+  height: 20px;
+  padding: 0 10px;
+  &.hidden {
+    visibility: hidden; 
+  }
+  &.visible {
+    visibility: visible; 
+  }
+}
+
+.tarjeta {
+  display: flex;
+  align-items: center;
+  background-color: #fceab8;
+  border-radius: 25px 5px 5px 25px;
+  width: 100%;
+  font-size: large;
+  padding-left: 5px;
+  gap: 1rem;
+  height: 60px;
+  cursor: pointer;
+}
+
+.tarjeta.activo {
+  background-color: var.$principal-acento;
+    -webkit-box-shadow: inset 0px 0px 7px 4px var.$principal;
+    -moz-box-shadow: inset 0px 0px 7px 4px var.$principal;
+    box-shadow: inset 0px 0px 7px 4px var.$principal;
+}
+
+.circulo {
+  border-radius: 50%;
+  height: 30px;
+  aspect-ratio: 1;
+  background-color: rgba(0, 0, 0, 0.13);
+}
+
+img {
+  max-height: 80px;
+}

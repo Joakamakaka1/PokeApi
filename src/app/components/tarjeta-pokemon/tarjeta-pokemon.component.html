@@ -1,0 +1,10 @@
+<div id="container">
+    <img src="https://pokedex-puntojson.netlify.app/assets/img/flecha.png" alt="flecha" id="flecha" [ngClass]="{'visible': isActive, 'hidden': !isActive}">
+    <div class="tarjeta" [ngClass]="{'activo': isActive}" (click)="onTarjetaClick()">
+        <div class="circulo"></div>
+        <img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{id}}.png'
+            alt="{{ titleCasePokemonName }}">
+        <span>No.{{ id }}</span>
+        <span>{{ titleCasePokemonName }}</span>
+    </div>
+</div>
