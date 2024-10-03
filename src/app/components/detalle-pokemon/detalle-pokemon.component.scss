@@ -2,157 +2,147 @@
 
 #container {
   display: grid;
-  grid-template-columns: 1fr 0.01fr;
+  grid-template-columns: 1fr 60px;
 }
 
-#datos {
+#data {
   height: 600px;
   width: 85vw;
   background-color: #fceab8;
   display: grid;
   grid-template-rows: 1fr 3fr 3fr;
+
   .area {
-    padding-left: 36vw;
-    padding-right: 50px;
     display: flex;
     align-items: center;
+    justify-content: center;
     height: 100%;
-    p:nth-child(2) {
-      margin-top: 30px;
-    }
+    padding-left: 35vw;
+    padding-right: 20px;
+    background-color: #d3ecf6;
 
-    p:last-child {
-      margin-top: 30px;
-    }
-
-    app-tarjeta-pokemon {
+    #pokemon {
+      height: 75%;
       width: 100%;
+      margin: 8px 0 8px;
     }
 
-    img {
-      max-height: 30px;
+    .info {
+      display: flex;
+      flex-direction: column;
     }
 
     #estadisticasContainer {
       width: 320px;
-      margin-left: 40px;
+      padding-left: 120px;
     }
-  }
-  .area:first-child {
-    flex-grow: 1;
-    background-color: #bfc3ce;
-    background-image: linear-gradient(
-        45deg,
-        #c4c3c5 25%,
-        transparent 25%,
-        transparent 75%,
-        #c3c5c4 75%,
-        #c3c5c4
-      ),
-      linear-gradient(
-        -45deg,
-        #c3c5c4 25%,
-        transparent 25%,
-        transparent 75%,
-        #c3c5c4 75%,
-        #c3c5c4
-      );
-    background-size: 20px 20px;
-  }
-  .area:nth-child(2) {
-    background-color: #d3ecf6;
-    background-image: linear-gradient(
-        45deg,
-        #c4e8f8 25%,
-        transparent 25%,
-        transparent 75%,
-        #c4e8f8 75%,
-        #c4e8f8
-      ),
-      linear-gradient(
-        -45deg,
-        #c4e8f8 25%,
-        transparent 25%,
-        transparent 75%,
-        #c4e8f8 75%,
-        #c4e8f8
-      );
-    background-size: 20px 20px;
-  }
-  .area:last-child {
-    background: repeating-linear-gradient(
-      0deg,
-      #cce486,
-      #cce486 2px,
-      #bfd678 2px,
-      #bfd678 4px
-    );
-  }
 
-  #caracteristicasContainer {
-    padding: 0 50px 0 50px;
-    .etiqueta {
-      background-color: #68bcea;
-      display: inline-block;
-      width: 150px;
-      padding: 10px 0;
-      margin: 5px 20px;
-      text-align: center;
-      border-radius: 4px;
-      color: white;
+    &:first-child {
+      flex-grow: 1;
+      background-color: #bfc3ce;
+      background-image: linear-gradient(
+          45deg,
+          #c3c5c4 25%,
+          transparent 25%,
+          transparent 75%,
+          #c3c5c4 75%,
+          #c3c5c4
+        ),
+        linear-gradient(
+          -45deg,
+          #c3c5c4 25%,
+          transparent 25%,
+          transparent 75%,
+          #c3c5c4 75%,
+          #c3c5c4
+        );
+      background-size: 20px 20px;
     }
-    .tipo {
-      padding: 10px;
-      margin-right: 7px;
-      border-radius: 4px;
-      color: white;
-      font-size: medium;
-    }
-    p {
-      color: var.$texto;
+
+    &:last-child {
+      background: repeating-linear-gradient(
+        0deg,
+        #cce486,
+        #cce486 2px,
+        #bfd678 2px,
+        #bfd678 4px
+      );
     }
   }
 
-  #descripcionContainer {
-    display: grid;
-    grid-template-columns: 20px 1fr 20px;
-    background-color: #f8f7db;
-    padding: 5px;
-    border-radius: 15px;
-    height: 75%;
-    width: 100%;
-    p {
-      margin: 10px 5px;
-      color: var.$texto;
+  .label {
+    display: inline-block;
+    background-color: #67bcea;
+    border-radius: 5px;
+    color: #f0fbff;
+    padding: 5px 20px;
+    margin-bottom: 10px;
+    font-size: x-large;
+    width: 100px;
+    text-align: center;
+    margin-right: 20px;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
+  }
+
+  .type {
+    background-color: rgba(89, 89, 89);
+    border-radius: 5px;
+    color: #f0fbff;
+    padding: 5px 20px;
+    margin-left: 5px;
+    font-size: x-large;
+    width: 100px;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
+  }
+}
+
+#descriptionContainer {
+  display: grid;
+  grid-template-columns: 20px 1fr 20px;
+  background-color: #f8f7db;
+  padding: 5px;
+  border-radius: 15px;
+  height: 75%;
+  width: 100%;
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
+
+  p {
+    margin: 10px 5px;
+    color: var.$texto;
+  }
+
+  div {
+    background-color: #daeac4;
+    height: 90%;
+    margin: 5px;
+    margin-top: 10px;
+
+    &:first-child {
+      border-radius: 0px 8px 8px 0px;
     }
-    div {
-      background-color: #d6edc3;
-      margin: 5px;
-    }
-    #descipcionPrincipio {
-      border-radius: 0 8px 8px 0;
-    }
-    #descripcionFinal {
-      border-radius: 8px 0 0 8px;
+    &:last-child {
+      border-radius: 8px 0px 0px 8px;
     }
   }
 }
 
 button {
-  background-color: var.$principal;
+  background-color: #fceab8;
+  border-radius: 0 25px 25px 0;
   border: unset;
   cursor: pointer;
-  border-radius: 0 35px 35px 0;
+
   img {
     height: 50px;
-    transition: 0.3s;
-    &:hover {
-      transition-timing-function: linear;
-      scale: 1.1;
-    }
+    transition: 0.5s;
+    transition-timing-function: ease-in-out;
+
     &.girar {
-      margin-left: auto;
-      transform: rotate(180deg);
+      rotate: 180deg;
+    }
+
+    &:hover {
+      scale: 1.1;
     }
   }
 }
@@ -163,11 +153,49 @@ button {
   left: 0;
   height: 100vh;
   width: 100vw;
-  background-color: rgba(0, 0, 0, 0.548);
+  background-color: rgba(0, 0, 0, 0.378);
   z-index: -1;
   opacity: 1;
+
   &.escondido {
     pointer-events: none;
     opacity: 0;
+  }
+}
+
+@media (max-width: 1487px) {
+  #data {
+    #estadisticasContainer {
+      width: 300px;
+      padding-left: 100px;
+    }
+
+    .area {
+      padding-left: 0;
+    }
+    .label {
+      font-size: medium;
+      width: 50px;
+      padding: 8px;
+      margin-right: 8px;
+    }
+
+    .type {
+      font-size: medium;
+      width: 50px;
+      padding: 8px;
+      margin-left: 8px;
+    }
+  }
+
+  #descriptionContainer {
+    margin-left: 25px;
+  }
+}
+
+@media (max-width: 575px) {
+  button {
+    width: 100%;
+    padding: 10px;
   }
 }

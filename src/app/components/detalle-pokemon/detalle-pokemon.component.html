@@ -1,61 +1,37 @@
 <div id="backdrop" [ngClass]="{'escondido': !abierto}" (click)="clicked.emit()"></div>
 <div id="container">
-    <div id="datos">
+    <div id="data">
         <div class="area">
-            <img src="https://pokedex-puntojson.netlify.app/assets/img/flecha.png" alt=""><app-tarjeta-pokemon
-                [fullData]="pokemon"></app-tarjeta-pokemon>
+            <div id="pokemon">
+                <div></div>
+                <app-tarjeta-pokemon [fullData]="pokemon"></app-tarjeta-pokemon>
+                <div></div>
+            </div>
         </div>
         <div class="area">
-            <div id="caracteristicasContainer">
-                <p>
-                    <span class="etiqueta">Tipo</span>
+            <div class="info">
+                <p><span class="label">Tipo</span>
                     @for (type of pokemon?.types; track pokemon?.types) {
-                    <span class="tipo" [ngStyle]="{'background-color': getTipoColor(type.type.name)}">
+                    <span class="type" [ngStyle]="{'background-color': getTipoColor(type.type.name)}">
                         {{getTipoEnEspanol(type.type.name)}}
                     </span>
                     }
                 </p>
-                <p><span class="etiqueta">Altura</span> {{pokemon?.height}}'</p>
-                <p><span class="etiqueta">Peso</span> {{pokemon?.weight}} lbs.</p>
-
-                <!--Si quisiera poner las habilidades de cada pokemon-
-                
-                <p>
-                    <span class="etiqueta">Habilidades</span>
-                    @for (ability of pokemon?.abilities; track pokemon?.abilities) {
-                    <span class="habilidad">
-                        {{(ability.ability.name)}}
-                    </span>
-                    }
-                </p>   
-                -->
-
+                <p><span class="label">Altura</span>{{pokemon?.height}}'</p>
+                <p><span class="label">Peso</span>{{pokemon?.weight}} lbs.</p>
             </div>
-
-            <!--
-            <div id="estadisticasContainer">
-                <h3>Estadísticas</h3>
-                @for (stat of pokemon?.stats; track pokemon?.stats) {
-                <p>
-                    <span class="etiqueta">{{stat.stat.name | uppercase}}</span>: {{stat.base_stat}}
-                </p>
-                }
-            </div>
-            -->
 
             <div id="estadisticasContainer">
-                <canvas baseChart [data]="radarChartData" [options]="radarChartOptions" [type]="radarChartType">
-                </canvas>
+                <canvas baseChart [data]="radarChartData" [options]="radarChartOptions"
+                    [type]="radarChartType"></canvas>
             </div>
-
         </div>
 
-
         <div class="area">
-            <div id="descripcionContainer">
-                <div id="descipcionPrincipio"></div>
-                <p>{{descripcion}}</p>
-                <div id="descripcionFinal"></div>
+            <div id="descriptionContainer">
+                <div></div>
+                <p>{{this.descripcion}}</p>
+                <div></div>
             </div>
         </div>
     </div>
