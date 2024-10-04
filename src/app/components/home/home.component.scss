@@ -1,0 +1,204 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  height: 100vh;
+  width: 100vw;
+  //background-image: url("https://c.wallhere.com/photos/a1/db/video_games_retro_games_Nintendo_Pok_mon_Pokemon_First_Generation_Red_Pokemon_bat_wings_bats-2276854.jpg!d");
+  //background-size: cover;
+  //background-position: center;
+  //background-repeat: no-repeat;
+  background: repeating-linear-gradient(
+    0deg,
+    #79a0e3 0px,
+    #79a0e3 10px,
+    #668cd7 10px,
+    #668cd7 50px
+  );
+}
+
+/*
+h1{
+  font-family: 'Press Start 2P', cursive;
+  margin-bottom: 40px;
+}
+*/
+
+@keyframes blinkCursor {
+    50% {
+      border-right-color: transparent;
+    }
+  }
+  
+  @keyframes typeAndDelete {
+    0%,
+    10% {
+        width: 0;
+    }
+    45%,
+    55% {
+        width: 10em; /* Ajusta este valor según sea necesario para "Coming soon..." */
+    }
+    90%,
+    100% {
+        width: 0;
+    }
+}
+  
+  .terminal-loader {
+    border: 0.1em solid #333;
+    background-color: #1a1a1a;
+    color: #0f0;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 1em;
+    padding: 1.5em 1em;
+    width: 12em;
+    height: 10em;
+    margin: 50px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+  
+  .terminal-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1.5em;
+    background-color: #333;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    padding: 0 0.4em;
+    box-sizing: border-box;
+  }
+  
+  .terminal-controls {
+    float: right;
+  }
+  
+  .control {
+    display: inline-block;
+    width: 0.6em;
+    height: 0.6em;
+    margin-left: 0.4em;
+    border-radius: 50%;
+    background-color: #777;
+  }
+  
+  .control.close {
+    background-color: #e33;
+  }
+  
+  .control.minimize {
+    background-color: #ee0;
+  }
+  
+  .control.maximize {
+    background-color: #0b0;
+  }
+  
+  .terminal-title {
+    float: left;
+    line-height: 1.5em;
+    color: #eee;
+  }
+  
+  .text {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 0.2em solid green;
+    animation: typeAndDelete 4s steps(13) infinite,
+      blinkCursor 0.5s step-end infinite alternate;
+    margin-top: 1.5em;
+    width: auto;
+  }
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+button {
+  background-color: #0050ec;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 15px 20px;
+  border-radius: 2em;
+  cursor: pointer;
+  transition: 0.1s ease;
+  border-width: 0;
+  margin-top: 20px;
+  box-shadow: 1px 5px 0 0 #0e285d;
+}
+
+button:hover {
+  transform: translateY(-4px);
+  box-shadow: 1px 9px 0 0 #0e285d;
+}
+
+button:active {
+  transform: translateY(4px);
+  box-shadow: 0px 0px 0 0 #0e285d;
+}
+
+.pokemon {
+  width: 200px;
+  height: 200px;
+  background-color: #302d2d;
+  border-radius: 30px;
+  position: relative;
+  font-size: 200px;
+  line-height: 200px;
+  display: inline-block;
+}
+.pokemon i:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 44px;
+  width: 44px;
+  border-radius: 44px;
+  background-color: #f6f7f8;
+  z-index: 2;
+  margin: -41px 0 0 -41px;
+  border: 18px solid #302d2d;
+}
+.pokemon:before {
+  content: "";
+  width: 200px;
+  height: 75px;
+  background-color: #ef4144;
+  display: block;
+  border-radius: 30px 30px 0 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.pokemon:after {
+  content: "";
+  width: 200px;
+  height: 96px;
+  background-color: #f6f7f8;
+  display: block;
+  border-radius: 0 0 30px 30px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  -webkit-box-shadow: inset 0px -20px 0px 0px #e2e3e4;
+  box-shadow: inset 0px -20px 0px 0px #e2e3e4;
+}
